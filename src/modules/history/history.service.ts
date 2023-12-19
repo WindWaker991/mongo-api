@@ -37,15 +37,17 @@ export class HistoryService {
     return this.historyModel.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} history`;
+  findOne(id: string) {
+    return this.historyModel.find();
   }
 
-  update(id: number, updateHistoryDto: UpdateHistoryDto) {
-    return `This action updates a #${id} history`;
+  update(id: string, updateHistoryDto: UpdateHistoryDto) {
+    return this.historyModel.findByIdAndUpdate(id, updateHistoryDto, {
+      new: true,
+    });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} history`;
+  remove(id: string) {
+    return this.historyModel.findByIdAndDelete(id);
   }
 }

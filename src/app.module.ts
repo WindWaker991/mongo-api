@@ -5,7 +5,9 @@ import { HistoryModule } from './modules/history/history.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://127.0.0.1:27017/profilesDB'),
+    MongooseModule.forRoot(
+      'mongodb+srv://windwaker991:alo123@profilesdb.uxu8fdc.mongodb.net/profilesDB?retryWrites=true&w=majority',
+    ),
     ProfileModule,
     HistoryModule,
   ],

@@ -33,4 +33,8 @@ export class ProfileService {
   remove(id: string) {
     return this.profileModel.findByIdAndDelete(id);
   }
+
+  findProfilesPerAccount(accountId: string) {
+    return this.profileModel.find({ account: accountId });
+  }
 }

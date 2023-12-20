@@ -39,4 +39,9 @@ export class ProfileController {
   remove(@Param('id') id: string) {
     return this.profileService.remove(id);
   }
+
+  @Get('account/:accountId')
+  findProfilesPerAccount(@Param('accountId') accountId: string) {
+    return this.profileService.findProfilesPerAccount(accountId);
+  }
 }
